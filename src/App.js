@@ -1,14 +1,13 @@
-import logo from './assets/img/logo.svg';
 import './assets/css/App.css';
 import MiComponent from './components/MiComponent';
+import Logos from './components/logos';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header p-4">
+        <Logos />
         <MiComponent />
-        <h2>My great app with React</h2>
-        <img src={logo} className="App-logo" alt="logo" />
         <a 
           className="App-link"
           href="https://bit.ly/hernanreiq"

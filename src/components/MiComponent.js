@@ -7,9 +7,9 @@ class MiComponent extends Component {
         var age = 22;
         var title = "Engineer";
         var friends = {
-            names: ['Reiq', 'GoldWhite', 'DemondR'],
-            happy: false,
-            money: 'Yes, I\'m happy with he.'
+            names: ['Reiq', 'GoldWhite', 'Hernan'],
+            happy: true,
+            text: 'Yes!'
         }
         return (
             <React.Fragment>
@@ -30,9 +30,9 @@ class MiComponent extends Component {
                                             </div>
                                             <div className="card-body">
                                                 <img src={image_card} alt={name} className="w-100" />
-                                                <h5>Does he make you happy?</h5>
+                                                <h5>Are you happy?</h5>
                                                 {
-                                                    friends.happy ? <p className="card-text">{friends.money}</p> : <p className="card-text">No, I'm very sad with he.</p>  
+                                                    friends.happy ? <h2><span className="badge badge-success">{friends.text}</span></h2> : ''
                                                 }
                                             </div>
                                         </div>
