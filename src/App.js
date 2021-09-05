@@ -1,21 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/img/logo.svg';
+import './assets/css/App.css';
+import MiComponent from './components/MiComponent';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header p-4">
+        <MiComponent />
+        <h2>My great app with React</h2>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
+        <a 
           className="App-link"
-          href="https://reactjs.org"
+          href="https://bit.ly/hernanreiq"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Visit my portfolio of projects and skills
         </a>
       </header>
     </div>
