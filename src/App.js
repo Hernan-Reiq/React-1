@@ -1,11 +1,13 @@
 import './assets/css/App.css';
 import MiComponent from './components/MiComponent';
+import ProbandoEstados from './components/probando_estados';
 import Logos from './components/logos';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header p-4">
+        <ProbandoEstados />
         <Logos />
         <MiComponent />
         <a 
