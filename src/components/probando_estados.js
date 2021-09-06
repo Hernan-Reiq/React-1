@@ -19,7 +19,8 @@ class Estados extends Component {
             contador: (this.state.contador - 1)
         });
     }
-    sumar() {
+    /* Esta forma de declarar un método ahorra el uso del método bind(this) */
+    sumar = (e) => {
         this.setState({
             contador: (this.state.contador + 1)
         });
@@ -34,7 +35,7 @@ class Estados extends Component {
                         <button onClick={this.restar.bind(this)} className="btn btn-danger">Restar</button>
                     </div>
                     <div className="col-md-6 my-2">
-                        <button onClick={this.sumar.bind(this)} className="btn btn-success">Sumar</button>
+                        <button onClick={this.sumar} className="btn btn-success">Sumar</button>
                     </div>
                 </div>
             </React.Fragment>

@@ -8,8 +8,11 @@ function App() {
     <div className="App">
       <header className="App-header p-4">
         <ProbandoEstados />
+        <div className="division"></div>
         <Logos />
+        <div className="division"></div>
         <MiComponent />
+        <div className="division"></div>
         <a 
           className="App-link"
           href="https://bit.ly/hernanreiq"

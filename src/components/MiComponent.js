@@ -41,8 +41,8 @@ class MiComponent extends Component {
                         { /* JSX */
                             friends.names.map((name, i) => {
                                 return (
-                                    <div className={this.state.cardState}>
-                                        <div className="card m-2" key={i}>
+                                    <div  key={i} className={this.state.cardState}>
+                                        <div className="card m-2">
                                             <div className="card-header">
                                                 <h2 className="card-title">
                                                     {name}
