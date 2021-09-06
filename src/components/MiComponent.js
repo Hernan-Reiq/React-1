@@ -42,7 +42,7 @@ class MiComponent extends Component {
                             friends.names.map((name, i) => {
                                 return (
                                     <div  key={i} className={this.state.cardState}>
-                                        <div className="card m-2">
+                                        <div className="card m-2 shadow">
                                             <div className="card-header">
                                                 <h2 className="card-title">
                                                     {name}
