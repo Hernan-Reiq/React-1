@@ -37,7 +37,7 @@ class MiComponent extends Component {
                     <h2>Hello everyone my name is {name}, I'am {title} and I'm {age} years old.</h2>
                     <br />
                     <h3>These are my great friends</h3>
-                    <div className="row row-cols-3">
+                    <div className="row row-cols-xl-3">
                         { /* JSX */
                             friends.names.map((name, i) => {
                                 return (

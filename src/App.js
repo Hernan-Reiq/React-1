@@ -3,15 +3,18 @@ import MiComponent from './components/MiComponent';
 import ProbandoEstados from './components/probando_estados';
 import Logos from './components/logos';
 import PropsBasicas from './components/PropsBasicas';
+import MasState from './components/MasState';
 
 function App() {
-  var text = "Es una forma interesante de enviar parámetros o variables a los componentes, aunque OJO, se puede hacer MUCHO MÁS! solo falta dedicarle el tiempo suficiente."
+  var textP = "Es una forma interesante de enviar parámetros o variables a los componentes, aunque OJO, se puede hacer MUCHO MÁS! solo falta dedicarle el tiempo suficiente."
   return (
     <div className="App">
       <header className="App-header p-4">
+        <MasState />
+        <div className="division"></div>
         <PropsBasicas
           title="Estoy probando las props de React y es genial!"
-          text={text}
+          text={textP}
         />
         <div className="division"></div>
         <ProbandoEstados />
