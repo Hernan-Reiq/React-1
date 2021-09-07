@@ -26,7 +26,8 @@ class MasState extends Component {
             }
         ],
         name: 'Hernan.Reiq',
-        action: 'Estamos recorriendo un array de objetos que tiene el state y usando las props para tener un código más limpio'
+        action: 'Estamos recorriendo un array de objetos que tiene el state y usando las props para tener un código más limpio',
+        favorita: {}
     }
 
     changeData = () => {
@@ -36,6 +37,19 @@ class MasState extends Component {
         peliculas[0].year = 2019;
         this.setState({
             peliculas: peliculas
+        });
+    }
+
+    marcarFavorita = (pelicula, indice) => {
+        console.log('Indice de la película por si quieres evitar pasar el objeto:', indice);
+        this.setState({
+            favorita: pelicula
+        });
+    }
+
+    eliminarFavorita = () => {
+        this.setState({
+            favorita: {}
         })
     }
 
@@ -44,6 +58,16 @@ class MasState extends Component {
             <React.Fragment>
                 <div className="container">
                     <h3>Selección de películas y series geniales por {this.state.name}</h3>
+                    {this.state.favorita.title &&
+                        <div class="alert alert-success alert-dismissible fade show my-3" role="alert">
+                            <p className="mb-0">
+                                Tu favorita es <strong>{this.state.favorita.title}</strong> estrenada en el año <strong>{this.state.favorita.year}</strong>
+                            </p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close" onClick={this.eliminarFavorita}>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    }
                     <div className="card-columns my-3">
                         {
                             this.state.peliculas.map((pelicula, i) => {
@@ -51,6 +75,8 @@ class MasState extends Component {
                                     <Pelicula
                                         key={i}
                                         pelicula={pelicula}
+                                        marcarFavorita={this.marcarFavorita}
+                                        indice={i}
                                     />
                                 );
                             })
