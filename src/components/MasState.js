@@ -25,20 +25,30 @@ class MasState extends Component {
                 year: 2021
             }
         ],
-        name: 'Hernan Demorizi Ureña',
+        name: 'Hernan.Reiq',
         action: 'Estamos recorriendo un array de objetos que tiene el state y usando las props para tener un código más limpio'
+    }
+
+    changeData = () => {
+        var { peliculas } = this.state;
+        peliculas[0].title = 'Avengers: Endgame';
+        peliculas[0].image = 'https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY741_.jpg';
+        peliculas[0].year = 2019;
+        this.setState({
+            peliculas: peliculas
+        })
     }
 
     render() {
         return (
             <React.Fragment>
                 <div className="container">
-                    <h3>Selección de películas geniales por {this.state.name}</h3>
+                    <h3>Selección de películas y series geniales por {this.state.name}</h3>
                     <div className="card-columns my-3">
                         {
                             this.state.peliculas.map((pelicula, i) => {
                                 return (
-                                    <Pelicula 
+                                    <Pelicula
                                         key={i}
                                         pelicula={pelicula}
                                     />
@@ -47,6 +57,7 @@ class MasState extends Component {
                         }
                     </div>
                     <p>{this.state.action}</p>
+                    <button className="btn btn-success" onClick={this.changeData}>Change the data for Avengers!</button>
                 </div>
             </React.Fragment>
         );
