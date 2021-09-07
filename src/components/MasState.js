@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Pelicula from './Pelicula';
 
 class MasState extends Component {
     state = {
@@ -17,10 +18,15 @@ class MasState extends Component {
                 title: 'Iron Man 3',
                 image: 'https://es.web.img3.acsta.net/medias/nmedia/18/77/86/82/20486826.jpg',
                 year: 2013
+            },
+            {
+                title: 'Loki',
+                image: 'https://images.clarin.com/2021/04/05/el-afiche-de-loki-con___n0zI0_5PB_720x0__1.jpg',
+                year: 2021
             }
         ],
         name: 'Hernan Demorizi Ureña',
-        action: 'Estamos recorriendo un array de objetos que tiene el state'
+        action: 'Estamos recorriendo un array de objetos que tiene el state y usando las props para tener un código más limpio'
     }
 
     render() {
@@ -28,21 +34,14 @@ class MasState extends Component {
             <React.Fragment>
                 <div className="container">
                     <h3>Selección de películas geniales por {this.state.name}</h3>
-                    <div className="row row-cols-xl-3 my-2">
+                    <div className="card-columns my-3">
                         {
                             this.state.peliculas.map((pelicula, i) => {
                                 return (
-                                    <div className="col-md-4 my-2" key={i}>
-                                        <div className="card">
-                                            <img src={pelicula.image} alt={pelicula.title} className="card-img-top" />
-                                            <div className="card-body">
-                                                <h5 className="card-title">{pelicula.title}</h5>
-                                                <span className="badge badge-info">
-                                                    {pelicula.year}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <Pelicula 
+                                        key={i}
+                                        pelicula={pelicula}
+                                    />
                                 );
                             })
                         }
