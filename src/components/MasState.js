@@ -29,6 +29,10 @@ class MasState extends Component {
         action: 'Estamos recorriendo un array de objetos que tiene el state y usando las props para tener un código más limpio',
         favorita: {}
     }
+    
+    componentDidMount(){
+        // alert('Esto se ejecuta luego de que el componente está montado')
+    }
 
     changeData = () => {
         var { peliculas } = this.state;
@@ -41,33 +45,36 @@ class MasState extends Component {
     }
 
     marcarFavorita = (pelicula, indice) => {
-        console.log('Indice de la película por si quieres evitar pasar el objeto:', indice);
+        console.log('Indice:', indice);
         this.setState({
             favorita: pelicula
         });
     }
 
-    eliminarFavorita = () => {
-        this.setState({
-            favorita: {}
-        })
-    }
-
     render() {
+        var favorita; 
+        if(this.state.favorita.title){
+            favorita = (
+                <div className="alert alert-success alert-dismissible fade show my-3" role="alert">
+                    <p className="mb-0">
+                        Tu favorita es <strong>{this.state.favorita.title}</strong> estrenada en el año <strong>{this.state.favorita.year}</strong>
+                    </p>
+                </div>
+            );
+        } else {
+            favorita = (
+                <div className="alert alert-info alert-dismissible fade show my-3" role="alert">
+                <p className="mb-0">
+                    Selecciona una película que te guste!
+                </p>
+            </div>
+            );
+        }
         return (
             <React.Fragment>
                 <div className="container">
                     <h3>Selección de películas y series geniales por {this.state.name}</h3>
-                    {this.state.favorita.title &&
-                        <div class="alert alert-success alert-dismissible fade show my-3" role="alert">
-                            <p className="mb-0">
-                                Tu favorita es <strong>{this.state.favorita.title}</strong> estrenada en el año <strong>{this.state.favorita.year}</strong>
-                            </p>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close" onClick={this.eliminarFavorita}>
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    }
+                    {favorita}
                     <div className="card-columns my-3">
                         {
                             this.state.peliculas.map((pelicula, i) => {
@@ -83,7 +90,13 @@ class MasState extends Component {
                         }
                     </div>
                     <p>{this.state.action}</p>
-                    <button className="btn btn-success" onClick={this.changeData}>Change the data for Avengers!</button>
+                    <button className="btn btn-success mb-2" onClick={this.changeData}>Change the data for Avengers!</button>
+                    {this.state.name === "Juan Pablo Duarte" ? (
+                        <p>Padre de la patria en RD</p>
+                    ) : (
+                        <p>Hernan.Reiq está probando las condicionales en JSX</p>
+                    )
+                    }
                 </div>
             </React.Fragment>
         );
