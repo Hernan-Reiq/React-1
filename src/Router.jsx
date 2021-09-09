@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Error from './components/Error';
 import Home from "./components/home";
 import Logos from "./components/logos";
 import StaticComponent from './components/static';
@@ -12,6 +13,7 @@ class Router extends Component {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/logos" component={Logos} />
                     <Route exact path="/static" component={StaticComponent} />
+                    <Route component={Error} />
                 </Switch>
             </BrowserRouter>
         )
