@@ -25,6 +25,7 @@ class Router extends Component {
                         return (
                             <React.Fragment>
                                 <h1 className="display-3">Te doy la bienvenida {nombre} {apellido ? apellido : ''}</h1>
+                                <Logos />
                             </React.Fragment>
                         )
                     }
