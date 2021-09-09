@@ -19,6 +19,16 @@ class Router extends Component {
                     <Route exact path="/home">
                         <Redirect to="/" /> {/*ESTO ME REDIRECCIONA A OTRO LUGAR*/}
                     </Route>
+                    <Route path="/test/:nombre/:apellido?" render={(props) => {
+                        var nombre = props.match.params.nombre;
+                        var apellido = props.match.params.apellido;
+                        return (
+                            <React.Fragment>
+                                <h1 className="display-3">Te doy la bienvenida {nombre} {apellido ? apellido : ''}</h1>
+                            </React.Fragment>
+                        )
+                    }
+                    } />
                     <Route component={Error} />
                 </Switch>
             </BrowserRouter>
