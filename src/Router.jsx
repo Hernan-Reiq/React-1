@@ -4,11 +4,14 @@ import Error from './components/Error';
 import Home from "./components/home";
 import Logos from "./components/logos";
 import StaticComponent from './components/static';
+import Navbar from './components/navbar';
 
 class Router extends Component {
     render() {
         return (
             <BrowserRouter> {/*Aquí van todas las configuraciones*/}
+                <Navbar />
+                <div className="division"></div>
                 <Switch>{/*Aquí van las rutas*/}
                     <Route exact path="/" component={Home} />
                     <Route exact path="/logos" component={Logos} />

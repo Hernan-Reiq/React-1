@@ -9,7 +9,9 @@ function App() {
   var textP = "Es una forma interesante de enviar parámetros o variables a los componentes, aunque OJO, se puede hacer MUCHO MÁS! solo falta dedicarle el tiempo suficiente."
   return (
     <div className="App">
-      <header className="App-header p-4">
+      <header>
+      <Router />
+        <div className="division"></div>
         <MasState />
         <div className="division"></div>
         <PropsBasicas
@@ -18,8 +20,6 @@ function App() {
         />
         <div className="division"></div>
         <ProbandoEstados />
-        <div className="division"></div>
-        <Router />
         <div className="division"></div>
         <MiComponent />
         <div className="division"></div>
