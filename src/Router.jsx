@@ -14,6 +14,7 @@ class Router extends Component {
                 <div className="division"></div>
                 <Switch>{/*Aquí van las rutas*/}
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/home" component={Home} />
                     <Route exact path="/logos" component={Logos} />
                     <Route exact path="/static" component={StaticComponent} />
                     <Route exact path="/test" render={() => (
@@ -22,7 +23,7 @@ class Router extends Component {
                     <Route exact path="/home">
                         <Redirect to="/" /> {/*ESTO ME REDIRECCIONA A OTRO LUGAR*/}
                     </Route>
-                    <Route path="/test/:nombre/:apellido?" render={(props) => {
+                    <Route path="/react/:nombre/:apellido?" render={(props) => {
                         var nombre = props.match.params.nombre;
                         var apellido = props.match.params.apellido;
                         return (
