@@ -5,6 +5,7 @@ import Home from "./components/home";
 import Logos from "./components/logos";
 import StaticComponent from './components/static';
 import Navbar from './components/navbar';
+import Formulario from './components/form';
 
 class Router extends Component {
     render() {
@@ -15,6 +16,7 @@ class Router extends Component {
                 <Switch>{/*Aquí van las rutas*/}
                     <Route exact path="/" component={Home} />
                     <Route exact path="/home" component={Home} />
+                    <Route exact path="/formulario" component={Formulario} />
                     <Route exact path="/logos" component={Logos} />
                     <Route exact path="/static" component={StaticComponent} />
                     <Route exact path="/test" render={() => (
