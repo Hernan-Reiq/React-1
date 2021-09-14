@@ -28,14 +28,16 @@ class Estados extends Component {
     render() {
         return (
             <React.Fragment>
-                <h3>Cambio de estado (State)</h3>
-                <p className="mb-0">Contador: {this.state.contador}</p>
-                <div className="row">
-                    <div className="col-md-6 my-2">
-                        <button onClick={this.restar.bind(this)} className="btn btn-danger">Restar</button>
-                    </div>
-                    <div className="col-md-6 my-2">
-                        <button onClick={this.sumar} className="btn btn-success">Sumar</button>
+                <div className="container">
+                    <h3>Cambio de estado (State)</h3>
+                    <p className="mb-0 h4">Contador: {this.state.contador}</p>
+                    <div className="row">
+                        <div className="col-md-6 my-2 px-0">
+                            <button onClick={this.restar.bind(this)} className="btn btn-danger">Restar</button>
+                        </div>
+                        <div className="col-md-6 my-2 px-0">
+                            <button onClick={this.sumar} className="btn btn-success">Sumar</button>
+                        </div>
                     </div>
                 </div>
             </React.Fragment>
