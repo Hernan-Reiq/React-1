@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Error from './components/Error';
 import Home from "./components/home";
 import Logos from "./components/logos";
-import StaticComponent from './components/static';
 import Navbar from './components/navbar';
 import Formulario from './components/form';
+import Peticiones from "./components/peticiones-http";
 
 class Router extends Component {
     render() {
@@ -18,7 +18,7 @@ class Router extends Component {
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/formulario" component={Formulario} />
                     <Route exact path="/logos" component={Logos} />
-                    <Route exact path="/static" component={StaticComponent} />
+                    <Route exact path="/peticiones" component={Peticiones} />
                     <Route exact path="/test" render={() => (
                         <h1>Esta ruta renderiza un componente dentro de ella, muy mala práctica pero puede ser útil algún día...</h1>
                     )} />

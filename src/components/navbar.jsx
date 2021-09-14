@@ -24,7 +24,7 @@ class Navbar extends Component {
                                     <NavLink to="/logos" activeClassName="active" className="h5 text-decoration-none">Logos</NavLink>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <NavLink to="/static" activeClassName="active" className="h5 text-decoration-none">Static</NavLink>
+                                    <NavLink to="/peticiones" activeClassName="active" className="h5 text-decoration-none">HTTP</NavLink>
                                 </li>
                                 <li className="nav-item mx-2">
                                     <NavLink to="/test" activeClassName="active" className="h5 text-decoration-none">Test</NavLink>
